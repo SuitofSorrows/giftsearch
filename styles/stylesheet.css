@@ -1,0 +1,300 @@
+/**************************
+  Page Container
+***************************/
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 10rem;
+}
+
+
+/**************************
+  Search Tool
+***************************/
+
+#TextBoxID {
+    background-image: url('searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 50%; /* Full-width was set to 100% */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin: 12px auto; /* Add some space below the input, originally set to bottom 12px */
+    /* Remove default list styling */
+    list-style-type: none;
+    display: block;
+}
+
+#TextBoxID-container {
+    margin-top: 50px;
+}
+
+#TextBoxID tr td {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+}
+
+#TextBoxID tr td:hover:not(.header) {
+    background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+/**************************
+  Table
+***************************/
+
+table {
+    /*display: block;*/
+    /*height: 800px;*/
+    /*table-layout: fixed;*/
+    /*width: 100%;*/
+    /*overflow-y: scroll;*/
+    /*overflow-x: auto;*/
+    white-space: nowrap;
+}
+
+@media (min-width: 576px) {
+    .table {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .table {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 992px) {
+    .table {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .table {
+        font-size: 16px;
+    }
+}
+
+table::-webkit-scrollbar {
+    width: 5px;
+    background-color: rgba(205, 205, 205, 0.1);
+}
+
+table::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(205, 205, 205, 0.1);
+    background-image: -webkit-gradient(linear,
+    40% 0%,
+    75% 84%,
+    from(#4D9C41),
+    to(#19911D),
+    color-stop(.6,#54DE5D))
+}
+
+table::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    background-color: rgba(205, 205, 205, 0.1);
+    border-radius: 5px;
+}
+
+.dataTables_filter {
+    float: right;
+}
+
+.page-item.active .page-link {
+    background-color: #00771d;
+    border-color: #00771d;
+}
+
+.page-link {
+    color: #00771d;
+}
+
+.table-bordered {
+    border: 0px solid #404040;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #404040;
+}
+
+table.dataTable {
+    background: rgba(205, 205, 205, .1);
+}
+
+.selected {
+    background-color: #ff890b;
+}
+
+table.table-bordered.dataTable th,
+table.table-bordered.dataTable td {
+    color: greenyellow;
+}
+
+label {
+    color: #ff890b;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    color: #ff890b;
+}
+
+/* Try this for setting table height and scroll */
+
+/*tbody {*/
+/*    display: block;*/
+/*    height: 800px;*/
+/*    overflow: auto;*/
+/*    width: 100%;*/
+/*}*/
+
+/*thead {*/
+/*    display: block;*/
+/*}*/
+
+/*thead tr, tbody tr {*/
+/*    width: 100%;*/
+/*    table-layout: fixed;*/
+/*}*/
+
+/**************************
+  Larry's Logo
+***************************/
+
+.logo {
+    display: block;
+    margin: 25px auto 5px;
+}
+
+/**************************
+  Container
+***************************/
+
+.container {
+    padding: 5px 0;
+}
+/**************************
+  Back To Top Button
+***************************/
+
+#top-btn {
+    display: none;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    bottom: 40px;
+    right: 40px;
+    border: none;
+
+    text-decoration: none;
+    /*text-align: center;*/
+    /*line-height: 40px;*/
+    color: #db151b;
+    font-size: 40px;
+    z-index: 1;
+}
+
+@media screen and (max-width: 770px) {
+    #top-btn {
+        bottom: 20px;
+        right: 10px;
+    }
+}
+
+/**************************
+  Add New Button
+***************************/
+
+.add-new-container {
+    position: relative;
+    padding: 15px 0 55px;
+}
+
+#add-new {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/**************************
+  Selected Row
+***************************/
+
+#gift-card-info.highlight {
+    /*border: 2px solid blue;*/
+    background-color: #000;
+    color: #fff;
+}
+
+/**************************
+  Form
+***************************/
+
+form {
+    text-align: center;
+}
+
+/**************************
+  Success Message
+***************************/
+
+.message-container {
+    width: 100%;
+    padding: 5px;
+}
+
+.success-message {
+    text-align: center;
+    color: green;
+    background-color: black;
+    font-size: 25px;
+}
+
+/**************************
+  Remove Input Arrows
+***************************/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/**************************
+  Footer
+***************************/
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 30px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
