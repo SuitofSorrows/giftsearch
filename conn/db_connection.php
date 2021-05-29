@@ -65,8 +65,10 @@ if (isset($_POST['submit-new'])) {
 
 
 echo "
-        <div class='add-new-container'>
+        <div class='buttons-container'>
             <button name='new-card' id='add-new' type='button' onclick='newCardForm()'>Add New Card</button>
+            <button name='get-history' id='get-history' type='button' onclick='historyForm()'>Get History</button>
+            <button name='update-card' id='update-card' type='button' onclick='updateCardForm()'>Update Card</button>
         </div>
        ";
 
@@ -74,7 +76,7 @@ echo "
         <form action='' method='post' id='new-card-form' style='display: none;'>
             <fieldset>
                 <legend>Add New Gift Card</legend>
-                <input type='number' name='gift-card-number' value='' inputmode='numeric' placeholder='Enter Gift Card Number' style='padding: 5px; width: 20%;'>
+                <input type='number' name='gift-card-number' value='' inputmode='numeric' placeholder='Gift Card Number' style='padding: 5px; width: 20%;'>
                 <input type='number' name='init-bal'  pattern='(\d{3})([\.])(\d{2})' min='0.00' max='999.99' value='' data-type='currency' inputmode='numeric' placeholder='Initial Balance' style='padding: 5px; width: 15%;'>
                 <select name='store' style='padding: 6px; width: 8%;'>
                     <option value='PFF' selected>PFF</option>
@@ -87,10 +89,22 @@ echo "
        ";
 
 echo "
-        <form action='' method='post'>
+        <form action='' method='post' id='history-form' style='display: none;'>
+            <fieldset>
+                <legend>Look Up Card History</legend>
+                <input type='text' name='id' value='' placeholder='ID' style='padding: 5px; width: 10%;'>
+                or
+                <input type='number' name='gift-card-history' id='selectedGC' value='' inputmode='numeric' placeholder='Gift Card Number' style='padding: 5px; width: 20%;'>
+                <input type='submit' name='submit-history' value='GET HISTORY' style='padding: 5px; width 20%;'>
+            </fieldset>
+        </form>
+       ";
+
+echo "
+        <form action='' method='post' id='update-card-form' style='display: none;'>
             <fieldset>
                 <legend>Update Gift Card Balance</legend>
-                <input type='text' name='id' value='' id='selectedId' style='padding: 5px; width: 10%;'>
+                <input type='text' name='id' value='' id='selectedId' placeholder='ID' style='padding: 5px; width: 10%;'>
                 <input type='number' name='rem-bal'  pattern='(\d{3})([\.])(\d{2})' min='0.00' max='999.99' value='' data-type='currency' inputmode='numeric' placeholder='Remaining Balance' style='padding: 5px; width: 15%;'>
                 <select name='acct-status' style='padding: 6px; width: 9%;'>
                     <option value='ACTIVE' selected>ACTIVE</option>
@@ -102,11 +116,6 @@ echo "
         </form>
        ";
 
-echo "
-        <form>
-                <input type='submit' name='submit-history' value='GET HISTORY' style='padding: 5px; width 20%;'>
-        </form>
-       ";
 
 if($resultSet->num_rows > 0) {
 
@@ -170,14 +179,9 @@ if (isset($_POST['submit-history'])) {
     $updatedQueryNew = mysqli_query($mysqli, $query);
 
 //    Query duplicate Ids
-    $historyLog = $mysqli->query("SELECT `Id`, COUNT(`Id`) FROM `table 2` GROUP BY `Id` HAVING COUNT(`Id`) > 1 FOR SYSTEM_TIME ALL");
+    $historyLog = $mysqli->query("SELECT `Id`, COUNT(`Id`) FROM `table 2` GROUP BY `Id` HAVING COUNT(`Id`) > 1");
 
-
+    while ($updates = mysqli_fetch_array($historyLog)) {
+        echo $updates;
+    }
 }
-
-
-//while ($updates = mysqli_fetch_array($historyLog)) {
-//    echo $updates;
-//}
-
-echo $historyLog;
