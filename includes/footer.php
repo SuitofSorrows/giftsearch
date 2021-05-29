@@ -7,5 +7,5 @@
 <script type="text/javascript" src="../js/highlight_selected.js"></script>
 <script type="text/javascript" src="../js/currency-format.js"></script>
 <script type="text/javascript" src="../js/date.js"></script>
-<script type="text/javascript" src="../js/selected_id.js"></script>
-<script type="text/javascript" src="../js/new_card.js"></script>
+<script type="text/javascript" src="../js/selected_values.js"></script>
+<script type="text/javascript" src="../js/button_functions.js"></script>
