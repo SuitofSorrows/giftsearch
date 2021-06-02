@@ -246,6 +246,13 @@ form {
     text-align: center;
 }
 
+.history-container {
+    text-align: center;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
 /**************************
   Remove Input Arrows
 ***************************/

@@ -63,12 +63,37 @@ if (isset($_POST['submit-new'])) {
 
 }
 
+//     Getting update history
+if (isset($_POST['submit-history'])) {
+
+    $giftcardHist = $_POST['gift-card-history'];
+
+//    $query = "SELECT * FROM `table 2` FOR SYSTEM_TIME ALL WHERE `Gift Card Number` = '$giftcardHist'";
+    $query = "SELECT `Account Status`, `Initial Balance`, `Remaining Balance`, `Store`, `Card Activation Date`, `Date Last Used`, `SysTimeEnd` FROM `table 2` FOR SYSTEM_TIME ALL WHERE `Gift Card Number` = '$giftcardHist'";
+
+    //     Get history data
+    $updatedQueryNew = mysqli_query($mysqli, $query);
+
+    echo "<h4 style='text-align: center'>$giftcardHist</h4>";
+
+    echo "<div class='history-container'>";
+
+    echo "<p>Status / Initial / Remaining / Store / Activation / Used / Time</p>";
+        while ($row = mysqli_fetch_assoc($updatedQueryNew)) {
+            print "<pre>";
+            echo implode(" &#x2022 ", $row);
+            print "</pre>";
+        }
+    echo "</div>";
+
+}
+
 
 echo "
         <div class='buttons-container'>
             <button name='new-card' id='add-new' type='button' onclick='newCardForm()'>Add New Card</button>
-            <button name='get-history' id='get-history' type='button' onclick='historyForm()'>Get History</button>
             <button name='update-card' id='update-card' type='button' onclick='updateCardForm()'>Update Card</button>
+            <button name='get-history' id='get-history' type='button' onclick='historyForm()'>Get History</button>            
         </div>
        ";
 
@@ -92,8 +117,6 @@ echo "
         <form action='' method='post' id='history-form' style='display: none;'>
             <fieldset>
                 <legend>Look Up Card History</legend>
-                <input type='text' name='id' value='' placeholder='ID' style='padding: 5px; width: 10%;'>
-                or
                 <input type='number' name='gift-card-history' id='selectedGC' value='' inputmode='numeric' placeholder='Gift Card Number' style='padding: 5px; width: 20%;'>
                 <input type='submit' name='submit-history' value='GET HISTORY' style='padding: 5px; width 20%;'>
             </fieldset>
@@ -171,17 +194,3 @@ if($resultSet->num_rows > 0) {
     echo "No gift cards found.";
 }
 
-//     Getting update history
-if (isset($_POST['submit-history'])) {
-    $query = "SELECT *, SysTimeStart, SysTimeEnd FROM `table 2` FOR SYSTEM_TIME ALL";
-
-    //     Update data
-    $updatedQueryNew = mysqli_query($mysqli, $query);
-
-//    Query duplicate Ids
-    $historyLog = $mysqli->query("SELECT `Id`, COUNT(`Id`) FROM `table 2` GROUP BY `Id` HAVING COUNT(`Id`) > 1");
-
-    while ($updates = mysqli_fetch_array($historyLog)) {
-        echo $updates;
-    }
-}
