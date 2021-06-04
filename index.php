@@ -13,7 +13,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <?php include 'conn/db_connection.php'?>
+                        <?php include 'conn/table.php'?>
                     </div>
                 </div>
             </div>
