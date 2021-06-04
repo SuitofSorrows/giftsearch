@@ -37,3 +37,13 @@ function updateCardForm() {
         document.getElementById('update-card').innerHTML = 'Update Card';
     }
 }
+
+function clearInput() {
+    document.getElementById('new-card-input').value = "";
+    document.getElementById('gift-number-input').value = "";
+    document.getElementById('initials-new').value = "";
+    document.getElementById('selectedId').value = "";
+    document.getElementById('rem-bal').value = "";
+    document.getElementById('initials-update').value = "";
+    document.getElementById('selectedGC').value = "";
+}

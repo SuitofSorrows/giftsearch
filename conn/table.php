@@ -10,7 +10,9 @@ echo "
         <div class='buttons-container'>
             <button name='new-card' id='add-new' type='button' onclick='newCardForm()'>Add New Card</button>
             <button name='update-card' id='update-card' type='button' onclick='updateCardForm()'>Update Card</button>
-            <button name='get-history' id='get-history' type='button' onclick='historyForm()'>Get History</button>            
+            <button name='get-history' id='get-history' type='button' onclick='historyForm()'>Get History</button>
+            <button name='clear-button' id='clear-button' type='button' onclick='clearInput()'>Clear Input</button>
+
         </div>
        ";
 
@@ -18,12 +20,13 @@ echo "
         <form action='' method='post' id='new-card-form' style='display: none;'>
             <fieldset>
                 <legend>Add New Gift Card</legend>
-                <input type='number' name='gift-card-number' value='' inputmode='numeric' placeholder='Gift Card Number' style='padding: 5px; width: 20%;'>
-                <input type='number' name='init-bal'  pattern='(\d{3})([\.])(\d{2})' min='0.00' max='999.99' value='' data-type='currency' inputmode='numeric' placeholder='Initial Balance' style='padding: 5px; width: 15%;'>
+                <input type='number' name='gift-card-number' value='' id='new-card-input' inputmode='numeric' placeholder='Gift Card Number' required style='padding: 5px; width: 20%;'>
+                <input type='number' name='init-bal'  pattern='(\d{3})([\.])(\d{2})' min='0.00' max='999.99' value='' id='gift-number-input' data-type='currency' inputmode='numeric' placeholder='Initial Balance' required style='padding: 5px; width: 15%;'>
                 <select name='store' style='padding: 6px; width: 8%;'>
                     <option value='PFF' selected>PFF</option>
                     <option value='LRS'>LRS</option>
                 </select>
+                <input type='text' name='initial-new' value='' id='initials-new' placeholder='Enter Initials' maxlength='3' pattern='[A-Za-z]{3}' onkeyup='this.value = this.value.toUpperCase();' oninvalid='this.setCustomValidity(`Enter 3 Letter Maximum`)' required style='padding: 5px; width: 10%;'>                
                 <input type='date' name='date-activated' value='' id='todays-date-add' style='padding: 4px; width: 160px;'>
                 <input type='submit' name='submit-new' value='ADD' style='padding: 5px; width 20%;'>
             </fieldset>
@@ -34,12 +37,13 @@ echo "
         <form action='' method='post' id='update-card-form' style='display: none;'>
             <fieldset>
                 <legend>Update Gift Card Balance</legend>
-                <input type='text' name='id' value='' id='selectedId' placeholder='ID' style='padding: 5px; width: 10%;'>
-                <input type='number' name='rem-bal'  pattern='(\d{3})([\.])(\d{2})' min='0.00' max='999.99' value='' data-type='currency' inputmode='numeric' placeholder='Remaining Balance' style='padding: 5px; width: 15%;'>
+                <input type='number' name='id' value='' id='selectedId' placeholder='ID' required style='padding: 5px; width: 10%;'>
+                <input type='number' name='rem-bal' pattern='(\d{3})([\.])(\d{2})' min='0.00' max='999.99' value='' id='rem-bal' data-type='currency' inputmode='numeric' placeholder='Remaining Balance' required style='padding: 5px; width: 15%;'>
                 <select name='acct-status' style='padding: 6px; width: 9%;'>
                     <option value='ACTIVE' selected>ACTIVE</option>
                     <option value='CLOSED'>CLOSED</option>
                 </select>
+                <input type='text' name='initial-up' value='' id='initials-update' placeholder='Enter Initials' maxlength='3' pattern='[A-Za-z]{3}' onkeyup='this.value = this.value.toUpperCase();' oninvalid='this.setCustomValidity(`Enter 3 Letter Maximum`)' required style='padding: 5px; width: 10%;'>
                 <input type='date' name='date-used' value='' id='todays-date' style='padding: 4px; width: 160px;'>
                 <input type='submit' name='submit-up' value='UPDATE' style='padding: 5px; width 20%;'>
             </fieldset>
