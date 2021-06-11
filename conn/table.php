@@ -21,7 +21,7 @@ echo "
             <fieldset>
                 <legend>Add New Gift Card</legend>
                 <input type='number' name='gift-card-number' value='' id='new-card-input' inputmode='numeric' placeholder='Gift Card Number' required style='padding: 5px; width: 20%;'>
-                <input type='number' name='init-bal'  pattern='(\d{3})([\.])(\d{2})' min='0.00' max='999.99' value='' id='gift-number-input' data-type='currency' inputmode='numeric' placeholder='Initial Balance' required style='padding: 5px; width: 15%;'>
+                <input type='number' name='init-bal'  pattern='(\d{3})([\.])(\d{2})' min='0.00' max='999.99' step='any' value='' id='gift-number-input' data-type='currency' inputmode='numeric' placeholder='Initial Balance' required style='padding: 5px; width: 15%;'>
                 <select name='store' style='padding: 6px; width: 8%;'>
                     <option value='PFF' selected>PFF</option>
                     <option value='LRS'>LRS</option>
@@ -38,7 +38,7 @@ echo "
             <fieldset>
                 <legend>Update Gift Card Balance</legend>
                 <input type='number' name='id' value='' id='selectedId' placeholder='ID' required style='padding: 5px; width: 10%;'>
-                <input type='number' name='rem-bal' pattern='(\d{3})([\.])(\d{2})' min='0.00' max='999.99' value='' id='rem-bal' data-type='currency' inputmode='numeric' placeholder='Remaining Balance' required style='padding: 5px; width: 15%;'>
+                <input type='number' name='rem-bal' pattern='(\d{3})([\.])(\d{2})' min='0.00' max='999.99' step='any' value='' id='rem-bal' data-type='currency' inputmode='numeric' placeholder='Remaining Balance' required style='padding: 5px; width: 15%;'>
                 <select name='acct-status' style='padding: 6px; width: 9%;'>
                     <option value='ACTIVE' selected>ACTIVE</option>
                     <option value='CLOSED'>CLOSED</option>
