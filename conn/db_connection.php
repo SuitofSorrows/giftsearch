@@ -64,7 +64,7 @@ if (isset($_POST['submit-new'])) {
     $query = "INSERT INTO `gift_table` (`Gift Card Number`, `Initial Balance`, `Remaining Balance`, `Store`, `Card Activation Date`, `Date Last Used`, `Initials`) VALUES ('$postGiftCardNum', '$postInitialBal', '$postInitialBal', '$storeAbbv', '$postDateActivated', '$postDateActivated', '$postInitNew')";
 
 //     Query to add card (Website)
-//    $query = "INSERT INTO `TABLE 2` (`Gift Card Number`, `Initial Balance`, `Remaining Balance`, `Store`, `Card Activation Date`, `Date Last Used` `Initials`) VALUES ('$postGiftCardNum', '$postInitialBal', '$postInitialBal', '$storeAbbv', '$postDateActivated', '$postDateActivated', '$postInitNew')";
+//    $query = "INSERT INTO `TABLE 2` (`Gift Card Number`, `Initial Balance`, `Remaining Balance`, `Store`, `Card Activation Date`, `Date Last Used`, `Initials`) VALUES ('$postGiftCardNum', '$postInitialBal', '$postInitialBal', '$storeAbbv', '$postDateActivated', '$postDateActivated', '$postInitNew')";
 
 //     Update data
     $updatedQueryNew = mysqli_query($mysqli, $query);
