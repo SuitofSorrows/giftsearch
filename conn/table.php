@@ -26,7 +26,7 @@ echo "
                     <option value='PFF' selected>PFF</option>
                     <option value='LRS'>LRS</option>
                 </select>
-                <input type='text' name='initial-new' value='' id='initials-new' placeholder='Enter Initials' maxlength='3' pattern='[A-Za-z]{3}' onkeyup='this.value = this.value.toUpperCase();' oninvalid='this.setCustomValidity(`Enter 3 Letter Maximum`)' required style='padding: 5px; width: 10%;'>                
+                <input type='text' name='initial-new' value='' id='initials-new' placeholder='Enter Initials' minlength='2' maxlength='3' pattern='[A-Za-z]{2,3}' onkeyup='this.value = this.value.toUpperCase();' oninvalid='this.setCustomValidity(`Enter 3 Letter Maximum`)' required style='padding: 5px; width: 10%;'>                
                 <input type='date' name='date-activated' value='' id='todays-date-add' style='padding: 4px; width: 160px;'>
                 <input type='submit' name='submit-new' value='ADD' style='padding: 5px; width 20%;'>
             </fieldset>
@@ -43,7 +43,7 @@ echo "
                     <option value='ACTIVE' selected>ACTIVE</option>
                     <option value='CLOSED'>CLOSED</option>
                 </select>
-                <input type='text' name='initial-up' value='' id='initials-update' placeholder='Enter Initials' maxlength='3' pattern='[A-Za-z]{3}' onkeyup='this.value = this.value.toUpperCase();' oninvalid='this.setCustomValidity(`Enter 3 Letter Maximum`)' required style='padding: 5px; width: 10%;'>
+                <input type='text' name='initial-up' value='' id='initials-update' placeholder='Enter Initials' minlength='2' maxlength='3' pattern='[A-Za-z]{2,3}' onkeyup='this.value = this.value.toUpperCase();' oninvalid='this.setCustomValidity(`Enter 3 Letter Maximum`)' required style='padding: 5px; width: 10%;'>
                 <input type='date' name='date-used' value='' id='todays-date' style='padding: 4px; width: 160px;'>
                 <input type='submit' name='submit-up' value='UPDATE' style='padding: 5px; width 20%;'>
             </fieldset>
