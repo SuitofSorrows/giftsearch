@@ -60,71 +60,40 @@ table {
     /*width: 100%;*/
     /*overflow-y: scroll;*/
     /*overflow-x: auto;*/
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
 
-@media (min-width: 576px) {
+@media screen and (max-width: 599px) {
     .table {
         font-size: 10px;
     }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 600px) {
     .table {
         font-size: 12px;
     }
 }
 
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
     .table {
         font-size: 14px;
+        white-space: nowrap;
     }
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
     .table {
         font-size: 16px;
     }
-}
-
-table::-webkit-scrollbar {
-    width: 5px;
-    background-color: rgba(205, 205, 205, 0.1);
-}
-
-table::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background-color: rgba(205, 205, 205, 0.1);
-    background-image: -webkit-gradient(linear,
-    40% 0%,
-    75% 84%,
-    from(#4D9C41),
-    to(#19911D),
-    color-stop(.6,#54DE5D))
-}
-
-table::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
-    box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
-    background-color: rgba(205, 205, 205, 0.1);
-    border-radius: 5px;
 }
 
 .dataTables_filter {
     float: right;
 }
 
-.page-item.active .page-link {
-    background-color: #00771d;
-    border-color: #00771d;
-}
-
-.page-link {
-    color: #00771d;
-}
-
 .table-bordered {
-    border: 0px solid #404040;
+    border: 0 solid #404040;
 }
 
 .table-bordered th,
@@ -134,23 +103,6 @@ table::-webkit-scrollbar-track {
 
 table.dataTable {
     background: rgba(205, 205, 205, .1);
-}
-
-.selected {
-    background-color: #ff890b;
-}
-
-table.table-bordered.dataTable th,
-table.table-bordered.dataTable td {
-    color: greenyellow;
-}
-
-label {
-    color: #ff890b;
-}
-
-div.dataTables_wrapper div.dataTables_info {
-    color: #ff890b;
 }
 
 /* Try this for setting table height and scroll */
@@ -172,6 +124,61 @@ div.dataTables_wrapper div.dataTables_info {
 /*}*/
 
 /**************************
+  Table Mobile Styling
+***************************/
+
+/* Original set to 599px, try for large phones at 767px */
+@media screen and (max-width: 767px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    .table td, .table th {
+        padding: 0 0 0 50%;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        /*top: 6px;*/
+        left: 5px;
+        width: 40%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    /* Label the data */
+    td:nth-of-type(1):before { content: "ID"; }
+    td:nth-of-type(2):before { content: "Gift Card Number"; }
+    td:nth-of-type(3):before { content: "Account Status"; }
+    td:nth-of-type(4):before { content: "Initial Balance"; }
+    td:nth-of-type(5):before { content: "Remaining Balance"; }
+    td:nth-of-type(6):before { content: "Store"; }
+    td:nth-of-type(7):before { content: "Card Activation Date"; }
+    td:nth-of-type(8):before { content: "Date Last Used"; }
+
+}
+
+/**************************
   Larry's Logo
 ***************************/
 
@@ -185,8 +192,16 @@ div.dataTables_wrapper div.dataTables_info {
 ***************************/
 
 .container {
-    padding: 5px 0;
+    padding: 0;
 }
+
+@media screen and (max-width: 599px) {
+    .container {
+        /*padding: 5px 0;*/
+        padding: 0 10px;
+    }
+}
+
 /**************************
   Back To Top Button
 ***************************/
@@ -209,10 +224,10 @@ div.dataTables_wrapper div.dataTables_info {
     z-index: 1;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 768px) {
     #top-btn {
-        bottom: 20px;
-        right: 10px;
+        bottom: 30px;
+        right: 30px;
     }
 }
 
@@ -222,11 +237,16 @@ div.dataTables_wrapper div.dataTables_info {
 
 .buttons-container {
     margin: 0 auto;
-    width: 800px;
+    /*width: 600px;*/
+    width: auto;
     padding-bottom: 20px;
     text-align: center;
 }
 
+button:hover {
+    background-color: #d6d6d6;
+    color: #ffffff;
+}
 
 /**************************
   Selected Row
@@ -259,6 +279,94 @@ form {
     margin-block-end: 1em;
 }
 
+.history-title {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+@media screen and (max-width: 599px){
+    .history-title {
+        font-size: 0.8rem;
+    }
+
+    pre {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .history-title {
+        font-size: 1rem;
+    }
+
+    pre {
+        font-size: 65%;
+    }
+}
+
+/**************************
+  Form Mobile Styling
+***************************/
+
+/* Original set to 599px, try for large phones at 767px */
+@media screen and (max-width: 767px) {
+    /*input[name=init-bal], [name=rem-bal], [name=initial-up], [name=initial-new], [name=gift-card-number], [name=gift-card-history], [type=date], select {*/
+    /*    display: block;*/
+    /*    margin: auto;*/
+    /*    width: 60%;*/
+    /*}*/
+
+    input#new-card-input, #gift-number-input,
+    #initials-new, #todays-date-add,
+    #selectedId, #rem-bal,
+    #initials-update, #todays-date,
+    #selectedGC, .store-select, select {
+        display: block;
+        margin: 0 auto 5px;
+        width: 60%;
+    }
+
+    input[type=submit] {
+        margin-top: 10px;
+    }
+}
+
+input[type=text] {
+    padding: 5px;
+    width: 10%;
+}
+
+input[type=number] {
+    padding: 5px;
+    width: 22%;
+}
+
+input[type=date] {
+    padding: 4px;
+    width: 150px;
+}
+
+input[type=submit] {
+    padding: 5px;
+}
+
+select {
+    padding: 6px;
+    /*width: 9%;*/
+}
+
+input[name=id] {
+    width: 10%;
+}
+
+input[name=gift-card-number] {
+    width: 25%;
+}
+
+input[name=gift-card-history] {
+    width: 25%;
+}
+
 /**************************
   Remove Input Arrows
 ***************************/
@@ -273,6 +381,16 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+/**************************
+  Logo Size
+***************************/
+
+@media screen and (max-width: 600px) {
+    img {
+        max-width: 400px;
+    }
 }
 
 /**************************
