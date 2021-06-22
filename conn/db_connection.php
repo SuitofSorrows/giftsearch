@@ -99,10 +99,10 @@ if (isset($_POST['submit-history'])) {
 
     echo "<div class='history-container'>";
 
-    echo "<span style='font-weight: 500; font-size: 1.25rem;'>Status | Initial | Remaining | Store | Activation | Used | Name | Time</span>";
+    echo "<span class='history-title'>Status | Initial | Remaining | Store | Activation | Used | Name | Time</span>";
 
     if (mysqli_num_rows($updatedQueryNew) === 0) {
-        echo "<span style='text-align: center; font-weight: 500;'><br><br>No History Found</span>";
+        echo "<span class='' style='text-align: center; font-weight: 500;'><br><br>No History Found</span>";
     }
 
     while ($row = mysqli_fetch_assoc($updatedQueryNew)) {

@@ -6,9 +6,7 @@
     <div id="page-container">
         <div id="content-wrap">
             <img src="images/larrys-logo.png" alt="LPRCS_Logo" class="logo">
-            <div id="TextBoxID-container">
-                <input type="text" id="TextBoxID" onkeyup="myFunction()" placeholder="Search for gift card...">
-            </div>
+            <?php include 'includes/search.php'?>
 
             <div class="container">
                 <div class="row">
