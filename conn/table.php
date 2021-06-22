@@ -8,7 +8,7 @@ echo "
 
 echo "
         <div class='buttons-container'>
-            <button name='new-card' id='add-new' type='button' onclick='newCardForm()'>Add New Card</button>
+            <button name='new-card' id='add-new' type='button' onclick='newCardForm()'>Add Card</button>
             <button name='update-card' id='update-card' type='button' onclick='updateCardForm()'>Update Card</button>
             <button name='get-history' id='get-history' type='button' onclick='historyForm()'>Get History</button>
             <button name='clear-button' id='clear-button' type='button' onclick='clearInput()'>Clear Input</button>
