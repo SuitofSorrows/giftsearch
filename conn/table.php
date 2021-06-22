@@ -113,4 +113,3 @@ if($resultSet->num_rows > 0) {
 } else {
     echo "No gift cards found.";
 }
-
