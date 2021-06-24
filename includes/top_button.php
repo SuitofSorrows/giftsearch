@@ -1,1 +1,1 @@
-<button onclick="topFunction()" id="top-btn">&#129093;</button>
+<button onclick="topFunction()" id="top-btn">&#x1F845;</button>
