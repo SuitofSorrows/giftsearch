@@ -20,7 +20,8 @@
         <div id="page-container">
             <div id="content-wrap">
                 <div class="logout-container">
-                    <a href="includes/logout.php">Logout</a>
+                    <a id="welcome-user">Welcome <?php echo $user_data['user_name']; ?></a>
+                    <a href="includes/logout.php" class="logout-text">Logout</a>
                 </div>
                 <img src="images/larrys-logo.png" alt="LPRCS_Logo" class="logo">
                 <?php include 'includes/search.php'?>

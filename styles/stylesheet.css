@@ -445,6 +445,31 @@ input[type=number] {
     }
 }
 
+
+/**************************
+  Header Welcome/Logout
+***************************/
+
+.logout-container {
+    text-align: right;
+    background-color: #222;
+    width: 100%;
+    padding: 5px;
+}
+
+#welcome-user {
+    color: white;
+    font-size: 16px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.logout-text {
+    color: #db151b;
+    font-size: 16px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    padding: 0 20px 0 10px;
+}
+
 /**************************
   Footer
 ***************************/
