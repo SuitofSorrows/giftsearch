@@ -306,6 +306,57 @@ form {
 }
 
 /**************************
+  Login/Registration Form
+***************************/
+
+#login-form {
+    max-width: 800px;
+    margin: 100px auto;
+    background-color: yellow;
+    border: 3px solid black;
+    border-radius: 15px;
+}
+
+#login-text {
+    padding: 5px;
+    width: 50%;
+}
+
+#login-button {
+    width: 20%;
+    color: white;
+    background-color: #db151b;
+    font-size: 16px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    padding: 5px;
+}
+
+.registered-text {
+    font-size: 16px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    padding: 10px;
+}
+
+.login-logo {
+    display: block;
+    margin: 25px auto;
+}
+
+.register-title {
+    font-size: 24px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    padding-bottom: 20px;
+}
+
+.register-error {
+    color: #db151b;
+    font-size: 16px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/**************************
   Form Mobile Styling
 ***************************/
 
