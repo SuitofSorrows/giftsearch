@@ -8,8 +8,7 @@ function check_login($mysqliSess) {
         $result = mysqli_query($mysqliSess, $query);
 
         if ($result && mysqli_num_rows($result) > 0) {
-            $user_data = mysqli_fetch_assoc($result);
-            return $user_data;
+            return mysqli_fetch_assoc($result);
         }
     }
 
