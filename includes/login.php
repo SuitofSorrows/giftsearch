@@ -17,17 +17,19 @@
         $loginResult = mysqli_query($mysqliSess, $query);
 
         if ($loginResult) {
-            if ($loginResult && mysqli_num_rows($loginResult) > 0) {
+            if (mysqli_num_rows($loginResult) > 0) {
                 $user_data = mysqli_fetch_assoc($loginResult);
 
                 if ($user_data['password'] === $password) {
                     $_SESSION['user_id'] = $user_data['user_id'];
                     header("Location: ../index.php");
                     die;
+                } else {
+                    $signup_error = "Username/Password is incorrect...try again.";
                 }
             }
         } else {
-            echo "Username/Password is incorrect...try again.";
+            $signup_error = "Username/Password is incorrect...try again.";
         }
 
     }
@@ -48,6 +50,11 @@
         <div id="login-form">
             <form method="post">
                 <img src="../images/lprcs_logo_login.png" alt="LPRCS_Logo" class="login-logo">
+
+                <?php if (!empty($signup_error)): ?>
+                    <div class="register-error"><?php echo $signup_error; ?></div>
+                <?php endif ?>
+
                 <input id="login-text" type="text" name="user_name" placeholder="Username"><br><br>
                 <input id="login-text" type="password" name="password" placeholder="Password"><br><br>
                 <input id="login-button" type="submit" value="Login"><br><br>
