@@ -31,10 +31,10 @@
 
                 mysqli_query($mysqliSess, $query);
 
-                //    Alert on successful update
-                if (mysqli_affected_rows($mysqli) > 0) {
-                    echo "<script>alert('$messageSuccess');</script>";
-                }
+                //    Alert on successful update (not working; go back and review this)
+//                if (mysqli_affected_rows($results) > 0) {
+//                    echo "<script>alert('$messageSuccess');</script>";
+//                }
 
                 header("Location: login.php");
                 die;
